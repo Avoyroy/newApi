@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "b57b27fa-73f5-4113-8c49-0383253d2ae8",
+		"name": "AK Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21388979"
+	},
+	"item": [
+		{
+			"name": "My Test",
+			"item": [
+				{
+					"name": "Doct1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://apiuat.doctube.com/napiv3/home/getHomeVideos?type=featured&lang=english&no_cache=1",
+							"protocol": "https",
+							"host": [
+								"apiuat",
+								"doctube",
+								"com"
+							],
+							"path": [
+								"napiv3",
+								"home",
+								"getHomeVideos"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "featured"
+								},
+								{
+									"key": "lang",
+									"value": "english"
+								},
+								{
+									"key": "no_cache",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//const response=pm.response.json();\r",
+									"//console.log(response.status_code)\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    console.log(\"hello\")\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.doctube.com/napiv3/login/verify?lang=english",
+							"protocol": "https",
+							"host": [
+								"api",
+								"doctube",
+								"com"
+							],
+							"path": [
+								"napiv3",
+								"login",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "english"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
